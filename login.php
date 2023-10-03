@@ -1,7 +1,7 @@
 <?php
 
     require('conexion.php');
-    header('Content-Type: application/json; charset=utf-8');
+    // header('Content-Type: application/json; charset=utf-8');
 
     $user = $_POST['user'];
     $pass = $_POST['pass'];

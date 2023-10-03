@@ -1,36 +1,65 @@
-function login(){
-    let form = $("#form_login");
-    let user = $("#correo").val();
-    let pass = $("#password").val();
+$(document).ready(function () {
+    console.log('asd');
+    mostrarnoticia();
+    mostrarusuario();
+});
 
-    if(user.trim()==''){
-        alert("usuario vacio");
-        return;
-    }else{
-        // alert("continua");
-    }
-
-    if(pass.trim()==''){
-        alert("password vacio");
-        return;
-    }else{
-        // alert("continua");
-    }
+function mostrarnoticia(){
 
     $.ajax({
-        type: "POST",
-        url: "login.php",
-        data: {"user":user,"pass":pass},
-        dataType: "json",
-        success: function (response) {
-            if(response.valid==0){
+        type: "GET",
+        url: "mostrar.php",
 
-                alert("usuario o contraseña incorrecto");
-            }else if(response.valid==1) {
-                window.location.href = "index.php";
-                alert("correcto");
-            }
+        success: function (response) {
+            let data = JSON.parse(response)
+            console.log(data);
+            let lista = '';
+            $.each(data, function (index, value) { 
+                lista+=`
+                <tr>
+                    <td>${value.id_noticia}</td>
+                    <td>${value.titulo}</td>
+                    <td>${value.descripcion}</td>
+                    <td>${value.imagen}</td>
+                    
+                </tr>
+                `
+            });
+            $('#lista').html(lista);
         }
-        
     });
+
 }
+
+function mostrarusuario(){
+
+    $.ajax({
+        type: "GET",
+        url: "mostrar.php",
+
+        success: function (response) {
+            let data = JSON.parse(response)
+            console.log(data);
+            let lista = '';
+            $.each(data, function (index, value) { 
+                lista+=`
+                <tr>
+                    <td>${value.id_usuario}</td>
+                    <td>${value.id_tipo_usuario}</td>
+                    <td>${value.nombre_usuario}</td>
+                    <td>${value.correo}</td>
+                    <td>${value.fecha}</td>
+                    
+                </tr>
+                `
+            });
+            $('#lista2').html(lista);
+        }
+    });
+
+
+}
+
+
+
+
