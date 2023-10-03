@@ -73,7 +73,7 @@
         <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
         <input type="button" id="insertartn" name="insertartn" value="insertar">
 
-<br><br><br>
+    <br><br><br>
         <table border="1">
             <thead>
                 <tr>

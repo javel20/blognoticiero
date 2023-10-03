@@ -10,7 +10,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: "mostrar.php",
+            url: "mostrartn.php",
     
             success: function (response) {
                 let data = JSON.parse(response)
@@ -42,6 +42,7 @@ $('#insertartn').click(function (e) {
         data: data,
 
         success: function (response) {
+            mostrartiponoticia();
             console.log('insertado');
         }
     });

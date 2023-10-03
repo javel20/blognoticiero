@@ -67,14 +67,20 @@
         </nav>
 
 <br>
-    <form action="">
+    <form action="" id=formn>
 
         
+        <select id="tn" name="id_tipo_noticia">
+            <option value="">Selecciona una opción</option>
+        </select>
         <input type="text" id="titulo" name="titulo" placeholder="Ingrese título">
         <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese descripcion">
+        <input type="text" id="imagen" name="imagen" placeholder="Ingrese imagen">
+        <input type="date" name="fecha" id="fecha">
 
+        <input type="button" id="insertarn" name="insertarn" value="insertar">
 
-        
+        <br><br>
         <table border="1">
             <thead>
                 <tr>
@@ -96,6 +102,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="../js.js"></script>
+    <script src="noticia.js"></script>
 </body>
 </html>
