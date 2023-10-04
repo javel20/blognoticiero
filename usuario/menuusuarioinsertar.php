@@ -84,16 +84,27 @@
 <br>
     <form action="" id="form">
         
-        <input type="text" id="titulo" name="titulo" placeholder="Ingrese título">
-        <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese descripcion">
+    <input type="hidden" id="id" name="id">
+    <select id="tu" name="id_tipo_usuario">
+            <option value="">Selecciona una opción</option>
+    </select>
+    <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Ingrese Nombre">
+    <input type="email" id="correo" name="correo" placeholder="Ingrese correo">
+    <input type="password" id="pass" name="pass" placeholder="Ingrese password">
+    <input type="date" id="fecha" name="fecha" placeholder="Ingrese fecha">
+
+    <input type="button" id="insertaru" name="insertaru" value="insertar">
+
 
 <br>
         <table border="1">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nombre</th>
                     <th>Tipo usuario</th>
+                    <th>Nombre usuario</th>
+                    <th>Correo</th>
+                    <th>Fecha</th>
 
                 </tr>
             </thead>

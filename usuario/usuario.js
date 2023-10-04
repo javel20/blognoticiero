@@ -1,11 +1,29 @@
 $(document).ready(function () {
     console.log('asd');
 
-    usuario();
+    mostrarusuario();
+
+    $.ajax({
+        type: "GET",
+        url: "../tipousuario/mostrartu.php",
+        dataType: 'json',
+        success: function(data) {
+            var select = $('#tu');
+            $.each(data, function(index, option) {
+                select.append($('<option>', {
+                    value: option.id_tipo_usuario,
+                    text: option.nombre_tipous
+                }));
+            });
+        },
+        error: function() {
+            alert('Error al obtener las opciones');
+        }
+    });
 });
 
 
-    function usuario(){
+    function mostrarusuario(){
 
         $.ajax({
             type: "GET",
@@ -19,8 +37,10 @@ $(document).ready(function () {
                     lista+=`
                     <tr>
                         <td>${value.id_usuario}</td>
-                        <td>${value.nombre_usuario}</td>
                         <td>${value.nombre_tipous}</td>
+                        <td>${value.nombre_usuario}</td>
+                        <td>${value.correo}</td>
+                        <td>${value.fecha}</td>
                         
                     </tr>
                     `
@@ -32,7 +52,7 @@ $(document).ready(function () {
     }
 
 
-$('#insertartu').click(function (e) { 
+$('#insertaru').click(function (e) { 
     let data = $('#form').serialize();
     console.log(data)
 
@@ -42,7 +62,7 @@ $('#insertartu').click(function (e) {
         data: data,
 
         success: function (response) {
-            mostrartipousuario();
+            mostrarusuario();
             console.log('insertado');
         }
     });
