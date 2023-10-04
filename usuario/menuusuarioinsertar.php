@@ -82,23 +82,22 @@
         </nav>
 
 <br>
-    <form action="">
+    <form action="" id="form">
         
         <input type="text" id="titulo" name="titulo" placeholder="Ingrese título">
         <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese descripcion">
 
-
+<br>
         <table border="1">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Tipo usuario</th>
                     <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Fecha</th>
+                    <th>Tipo usuario</th>
+
                 </tr>
             </thead>
-            <tbody id="lista2">
+            <tbody id="lista3">
 
             </tbody>
         </table>
@@ -109,6 +108,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="../js.js"></script>
+    <script src="usuario.js"></script>
 </body>
 </html>

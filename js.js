@@ -4,11 +4,19 @@ $(document).ready(function () {
     mostrarusuario();
 });
 
+
+function redirigirASesion() {
+    // Cambia la URL a la que deseas redirigir
+    window.location.href = "loginfront.php";
+}
+
+
+
 function mostrarnoticia(){
 
     $.ajax({
         type: "GET",
-        url: "mostrar.php",
+        url: "noticia/mostrarn.php",
 
         success: function (response) {
             let data = JSON.parse(response)
@@ -16,13 +24,18 @@ function mostrarnoticia(){
             let lista = '';
             $.each(data, function (index, value) { 
                 lista+=`
-                <tr>
-                    <td>${value.id_noticia}</td>
-                    <td>${value.titulo}</td>
-                    <td>${value.descripcion}</td>
-                    <td>${value.imagen}</td>
-                    
-                </tr>
+            <div class="row">
+                <div class="col-md-4" >
+
+                    <img src='${value.imagen}' class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${value.titulo}</h5>
+                    <p class="card-text">${value.descripcion}
+                    <a href="#" class="btn btn-primary">Más información</a>
+                    </div><br>
+                </div>
+            </div>
+                
                 `
             });
             $('#lista').html(lista);
@@ -35,7 +48,7 @@ function mostrarusuario(){
 
     $.ajax({
         type: "GET",
-        url: "mostrar.php",
+        url: "usuario/mostraru.php",
 
         success: function (response) {
             let data = JSON.parse(response)

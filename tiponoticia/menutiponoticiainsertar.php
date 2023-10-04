@@ -83,9 +83,10 @@
 <br>
     <form action="" id="form">
 
-        
+        <input type="hidden" id="id" name="id">
         <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
         <input type="button" id="insertartn" name="insertartn" value="insertar">
+        <input type="button" id="actualizartn" name="actualizartn" value="actualizar">
 
     <br><br><br>
         <table border="1">
@@ -93,7 +94,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
-
+                    <th>Operaciones</th>
                 </tr>
             </thead>
             <tbody id="lista3">

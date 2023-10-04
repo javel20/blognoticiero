@@ -2,7 +2,6 @@ $(document).ready(function () {
     console.log('asd');
 
     mostrarnoticia();
-    
 
         $.ajax({
             type: "GET",
@@ -42,7 +41,11 @@ function mostrarnoticia(){
                     <td>${value.id_noticia}</td>
                     <td>${value.titulo}</td>
                     <td>${value.descripcion}</td>
+                    <td>${value.nombre_not}</td>    
                     <td>${value.imagen}</td>
+                    <td>
+                        <button></button>
+                    </td>
                     
                 </tr>
                 `

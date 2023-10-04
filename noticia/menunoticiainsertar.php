@@ -101,6 +101,7 @@
                     <th>Id</th>
                     <th>titulo</th>
                     <th>Descripcion</th>
+                    <th>Tipo de noticia</th>
                     <th>Imagen</th>
                 </tr>
             </thead>
