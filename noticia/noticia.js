@@ -24,6 +24,25 @@ $(document).ready(function () {
         
 });
 
+
+
+$(document).on('click','#btnel', function () {
+    let id = $(this).val()
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "eliminar.php",
+        data: {id},
+        success: function (response) {
+            mostrarnoticia();
+            console.log('eliminado');
+        }
+    });
+
+});
+
+
+
 $('#actualizarn').click(function (e) { 
 
     let data = $('#formn').serialize();
@@ -85,7 +104,7 @@ function mostrarnoticia(){
                     <td>${value.imagen}</td>
                     <td>
                         <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Editar</button>
-                        <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Eliminar</button>
+                        <button button class="btn btn-success" id="btnel" value="${value.id_noticia}">Eliminar</button>
                     </td>
                     
                 </tr>

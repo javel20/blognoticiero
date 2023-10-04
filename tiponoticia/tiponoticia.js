@@ -4,6 +4,27 @@ $(document).ready(function () {
     mostrartiponoticia();
 });
 
+
+
+
+$(document).on('click','#btnel', function () {
+    let id = $(this).val()
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "eliminar.php",
+        data: {id},
+        success: function (response) {
+            mostrartiponoticia();
+            console.log('eliminado');
+        }
+    });
+
+});
+
+
+
+
 $('#actualizartn').click(function (e) { 
 
     let data = $('#form').serialize();

@@ -5,6 +5,24 @@ $(document).ready(function () {
 });
 
 
+$(document).on('click','#btnel', function () {
+    let id = $(this).val()
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "eliminar.php",
+        data: {id},
+        success: function (response) {
+            mostrartipousuario();
+            console.log('eliminado');
+        }
+    });
+
+});
+
+
+
+
 $('#actualizartu').click(function (e) { 
     let data = $('#form').serialize();
     console.log(data)
@@ -62,7 +80,7 @@ $(document).on('click','#btned', function () {
                         <td>${value.nombre_tipous}</td>
                         <td>
                             <button class="btn btn-success" id='btned' name='btned' value='${value.id_tipo_usuario}'>Editar</button>
-                            <button class="btn btn-success" id='btned' name='btnel' value='${value.id_tipo_usuario}'>Eliminar</button>
+                            <button class="btn btn-success" id='btnel' name='btnel' value='${value.id_tipo_usuario}'>Eliminar</button>
                         </td>
                         
                     </tr>
