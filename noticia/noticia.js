@@ -44,7 +44,8 @@ function mostrarnoticia(){
                     <td>${value.nombre_not}</td>    
                     <td>${value.imagen}</td>
                     <td>
-                        <button></button>
+                        <button>Editar</button>
+                        <button>Eliminar</button>
                     </td>
                     
                 </tr>

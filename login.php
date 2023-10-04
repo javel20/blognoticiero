@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     require('conexion.php');
     // header('Content-Type: application/json; charset=utf-8');
 
@@ -15,6 +17,11 @@
     $response["valid"] = 0;
     if(isset($data['contraseña'])){
         if (password_verify($pass, $data['contraseña'])){
+            // Establecer variables de sesión
+            // echo $data['id_usuario'] .'sess';
+            $_SESSION['id_usuario'] = $data['id_usuario'];  // Puedes almacenar cualquier información del usuario que desees
+            $_SESSION['usuario_nombre'] = $data['nombre_usuario'];
+            $_SESSION['correo'] = $data['correo'];
             $response["valid"]=1;
         }
     }

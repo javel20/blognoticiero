@@ -1,3 +1,11 @@
+<?php
+// session_start();
+
+// if($_SESSION['usuario_nombre'] === null){
+//     header("location: ../loginfront.php");
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +77,11 @@
                         </ul>
                         </li>
                     </ul>
+
+                    <?php 
+                    // echo 'usuario: '.$_SESSION['usuario_nombre']; 
+                    ?>
+                    <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
 
                     
                     <form class="d-flex" role="search">

@@ -1,3 +1,12 @@
+<?php
+// session_start();
+
+// if($_SESSION['usuario_nombre'] === null){
+//     header("location: loginfront.php");
+// }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="menu.php">MENU PRINCIPAL</a>
@@ -71,6 +80,11 @@
                         </li>
                     </ul>
 
+                    <?php 
+                    // echo 'usuario: '.$_SESSION['usuario_nombre']; 
+                    ?>
+                    <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
+
                     
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -81,7 +95,7 @@
         </nav>
 
 
-    </form>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
