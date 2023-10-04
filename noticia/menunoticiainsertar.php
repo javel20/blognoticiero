@@ -93,9 +93,9 @@
         </nav>
 
 <br>
-    <form action="" id=formn>
+    <form action="" id="formn">
 
-        
+    <input type="hidden" id="id" name="id">
         <select id="tn" name="id_tipo_noticia">
             <option value="">Selecciona una opción</option>
         </select>
@@ -105,6 +105,7 @@
         <input type="date" name="fecha" id="fecha">
 
         <input type="button" id="insertarn" name="insertarn" value="insertar">
+        <input type="button" id="actualizarn" name="actualizarn" value="actualizar">
 
         <br><br>
         <table border="1">
