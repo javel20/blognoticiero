@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
                 <a class="navbar-brand" href="../menu.php">MENU PRINCIPAL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,31 +96,32 @@
                     <?php 
                     // echo 'usuario: '.$_SESSION['usuario_nombre']; 
                     ?>
-                    <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
+                    <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a>
 
                     
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+
                 </div>
             </div>
         </nav>
 
 <br>
-    <form action="" id="form">
+    <form action="" id="form" class="container">
 
         <input type="hidden" id="id" name="id">
-        <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
-        <input type="button" id="insertartu" name="insertartu" value="insertar">
-        <input type="button" id="actualizartu" name="actualizartu" value="actualizar">
-
+        <div class="row my-3">
+            <div class="col-4">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre">
+            </div>
+        </div>
+            <input type="button" class="btn btn-primary" id="insertartu" name="insertartu" value="insertar">
+        <input type="button" class="btn btn-primary" id="actualizartu" name="actualizartu" value="actualizar">
     <br><br><br>
-        <table border="1">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nombre</th>
+                    <th>Operaciones</th>
 
                 </tr>
             </thead>

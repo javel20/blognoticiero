@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
                 <a class="navbar-brand" href="../menu.php">MENU PRINCIPAL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,27 +96,29 @@
                     <?php 
                     // echo 'usuario: '.$_SESSION['usuario_nombre']; 
                     ?>
-                    <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
+                    <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a>
                     
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+
                 </div>
             </div>
         </nav>
 
 <br>
-    <form action="" id="form">
+    <form action="" id="form" class="container">
 
         <input type="hidden" id="id" name="id">
-        <select id="us" name="id_usuario">
-            <option value="">Selecciona una opción</option>
-        </select>
-        <input type="button" id="buscar" name="buscar" value="Buscar">
+        <div class="row my-3">
+            <div class="col-4">
+                <select class="form-select" id="us" name="id_usuario">
+                    <option value="">Selecciona una opción</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="button" class="btn btn-primary" id="buscar" name="buscar" value="Buscar">
 
     <br><br><br>
-        <table border="1">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Usuario</th>

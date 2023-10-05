@@ -7,27 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand">BIENVENIDO</a>
-                <nav class="navbar bg-body-tertiary">
-                    <form class="container-fluid justify-content-start">
-                        <button class="btn btn-outline-success me-2" type="button" onclick="redirigirASesion()">INICIAR SESION</button>
-                    </form>
-                </nav>
-            <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+                <button class="btn btn-light btn-sm" type="button" onclick="redirigirASesion()">INICIAR SESION</button>
+            
         </div>
     </nav>
 
    
         <br><br>
-        <div class="container text-center">
-            <div class="row" id = "lista">
-                
-            </div>
+        <div class="container text-center" >
+            <div class="row" >
+                <div class="col-md-4" id="lista">
+                </div>
+            
         </div>
    
 

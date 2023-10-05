@@ -17,7 +17,7 @@
 </head>
 <body>
     
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">   
             <div class="container-fluid">
                 <a class="navbar-brand" href="menu.php">MENU PRINCIPAL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,10 +101,7 @@
                     <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
 
                     
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+
                 </div>
             </div>
         </nav>

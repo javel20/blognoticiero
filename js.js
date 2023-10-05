@@ -24,17 +24,14 @@ function mostrarnoticia(){
             let lista = '';
             $.each(data, function (index, value) { 
                 lista+=`
-            <div class="row">
-                <div class="col-md-4" >
 
-                    <img src='${value.imagen}' class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">${value.titulo}</h5>
-                    <p class="card-text">${value.descripcion}
-                    <a href="#" class="btn btn-primary">Más información</a>
-                    </div><br>
-                </div>
-            </div>
+                        <img src='${value.imagen}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${value.titulo}</h5>
+                            <p class="card-text">${value.descripcion}
+                            <a href="#" class="btn btn-primary">Más información</a>
+                        </div><br>
+   
                 
                 `
             });

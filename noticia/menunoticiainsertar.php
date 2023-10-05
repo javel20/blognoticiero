@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
                 <a class="navbar-brand" href="../menu.php">MENU PRINCIPAL</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,34 +96,47 @@
                     <?php 
                     // echo 'usuario: '.$_SESSION['usuario_nombre']; 
                     ?>
-                    <!-- <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a> -->
+                    <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a>
 
                     
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+
                 </div>
             </div>
         </nav>
 
 <br>
-    <form action="" id="formn">
+    <form action="" id="formn" class="container">
 
     <input type="hidden" id="id" name="id">
-        <select id="tn" name="id_tipo_noticia">
-            <option value="">Selecciona una opción</option>
-        </select>
-        <input type="text" id="titulo" name="titulo" placeholder="Ingrese título">
-        <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese descripcion">
-        <input type="text" id="imagen" name="imagen" placeholder="Ingrese imagen">
-        <input type="date" name="fecha" id="fecha">
+    <div class="row my-3">
+        <div class="col-4">
+            <select id="tn" name="id_tipo_noticia" class="form-select" aria-label="Default select example">
+                <option value="">Selecciona una opción</option>
+            </select>
+        </div>
 
-        <input type="button" id="insertarn" name="insertarn" value="insertar">
-        <input type="button" id="actualizarn" name="actualizarn" value="actualizar">
+        <div class="col-4">
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese título">
+        </div>
+
+        <div class="col-4">
+            <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Ingrese descripcion">
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-4">
+            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Ingrese imagen">
+        </div>
+        <div class="col-4">
+            <input type="date" class="form-control" name="fecha" id="fecha">
+        </div>
+    </div>
+
+        <input type="button" id="insertarn" class="btn btn-primary" name="insertarn" value="insertar">
+        <input type="button" id="actualizarn" class="btn btn-primary" name="actualizarn" value="actualizar">
 
         <br><br>
-        <table border="1">
+        <table class="table table-striped my-5">
             <thead>
                 <tr>
                     <th>Id</th>
