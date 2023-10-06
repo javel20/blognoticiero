@@ -45,16 +45,20 @@ $(document).on('click','#btnel', function () {
 
 $('#actualizarn').click(function (e) { 
 
-    let data = $('#formn').serialize();
+    let data = new FormData($('#formn')[0]);
+    
+
     $.ajax({
         type: "POST",
-        url: "actualizar.php",
+        url: "insertar.php",
         data: data,
+        contentType: false,
+        processData:false,
         
         success: function (response) {
+            $('#actualizarn').hide();
+            $('#insertarn').show();
             console.log(response);
-            $('#actualizartn').hide();
-            $('#insertartn').show();
             mostrarnoticia();
         }
     });
@@ -70,16 +74,17 @@ $(document).on('click','#btned', function () {
         url: "cargar.php",
         data: {id},
         success: function (response) {
+            $('#actualizarn').show();
+            $('#insertarn').hide();
             let data = JSON.parse(response)
             $('#id').val(data.id_noticia);
             $('#tn').val(data.id_tipo_noticia);
             $('#titulo').val(data.titulo);
             $('#descripcion').val(data.descripcion);
-            $('#imagen').val(data.imagen);
             $('#fecha').val(data.fecha);
+            $('#imagen').val(data.imagen);
+            
 
-            $('#actualizarn').show();
-            $('#insertarn').hide();
         }
     });
 });

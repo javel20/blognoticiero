@@ -1,12 +1,26 @@
 <?php
 
-require('../conexion.php');
+$response = array();
 
+$ruta = 'archivos/';
+
+if (($_FILES["imagen"]["type"] == "image/jpg")
+|| ($_FILES["imagen"]["type"] == "image/jpeg")
+|| ($_FILES["imagen"]["type"] == "image/png")
+|| ($_FILES["imagen"]["type"] == "image/gif")){
+
+    //ruta del archivo y guarda en la ubicacion deseada
+    move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta.$_FILES['imagen']['name']);
+
+    $imagen = $ruta.$_FILES['imagen']['name'];
+    // echo $imagen;
+
+    require ('../conexion.php');
     $id = $_POST['id'];
     $id_tipo_noticia = $_POST['id_tipo_noticia'];
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
-    $imagen = $_POST['imagen'];
+    // $imagen = $_POST['imagen'];
     $fecha = $_POST['fecha'];
 
 
@@ -19,5 +33,5 @@ require('../conexion.php');
         echo json_encode(array('success' => false, 'message' => 'Error al actualizar la base de datos.'));
     }
         echo $query;
-
+}
 ?>
