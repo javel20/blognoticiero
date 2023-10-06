@@ -17,10 +17,8 @@
 
    
         <br><br>
-        <div class="container text-center" >
-            <div class="row" >
-                <div class="col-md-4" id="lista">
-                </div>
+        <div class="container text-center" id="lista">
+           
             
         </div>
    

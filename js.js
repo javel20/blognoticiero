@@ -23,17 +23,28 @@ function mostrarnoticia(){
             console.log(data);
             let lista = '';
             $.each(data, function (index, value) { 
-                lista+=`
 
+                if (index % 3 === 0) {
+                    // Comienza una nueva fila para cada tercer elemento
+                    lista += '<div class="row">';
+                }
+
+                lista+=`
+                    <div class="col-4">
                         <img src='${value.imagen}' class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${value.titulo}</h5>
                             <p class="card-text">${value.descripcion}
                             <a href="#" class="btn btn-primary">Más información</a>
                         </div><br>
-   
-                
-                `
+                    </div>
+                        
+                        `
+                if ((index + 1) % 3 === 0 || index === data.length - 1) {
+                    // Cierra la fila después de cada tercer elemento o al final de los datos
+                    lista += '</div>';
+                }
+                        
             });
             $('#lista').html(lista);
         }
