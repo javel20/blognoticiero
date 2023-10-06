@@ -50,7 +50,7 @@ $('#actualizarn').click(function (e) {
 
     $.ajax({
         type: "POST",
-        url: "insertar.php",
+        url: "actualizar.php",
         data: data,
         contentType: false,
         processData:false,
