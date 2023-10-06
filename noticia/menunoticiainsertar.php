@@ -125,7 +125,7 @@
     </div>
     <div class="row my-3">
         <div class="col-4">
-            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Ingrese imagen">
+            <input type="file" class="form-control" id="imagen" name="imagen" placeholder="Ingrese imagen">
         </div>
         <div class="col-4">
             <input type="date" class="form-control" name="fecha" id="fecha">

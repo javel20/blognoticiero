@@ -118,13 +118,15 @@ function mostrarnoticia(){
 
 
 $('#insertarn').click(function (e) { 
-    let data = $('#formn').serialize();
+    let data = new FormData($('#formn')[0]);
     
 
     $.ajax({
         type: "POST",
         url: "insertar.php",
         data: data,
+        contentType: false,
+        processData:false,
 
         success: function (response) {
             console.log('insertado');
