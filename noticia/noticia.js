@@ -1,8 +1,37 @@
+var tabla;
 $(document).ready(function () {
+
     console.log('asd');
     $('#actualizarn').hide();
 
-    mostrarnoticia();
+
+    // mostrarnoticia();
+        
+   
+    tabla = $('#tabla').DataTable({
+        "ajax":{
+            "url": "mostrarn.php",
+            "dataSrc":""
+        },
+        lengthMenu: [[3, 10, 25, -1], [3, 10, 25, "All"]],
+        "columns":[
+            
+               {"data": "id_noticia"},
+               {"data": "nombre_usuario"},
+               {"data": "titulo"},
+               {"data": "descripcion"},
+               {"data": "nombre_not"},
+               {"data": "imagen"},
+               {"data": "id_noticia",
+               "render": function(data, type, row) {
+                   return '<button class="btn btn-success btn-editar" id="btned" value="' + data + '">Editar</button>';
+               }}
+            
+        ],
+        // "lengthChange": false
+    });
+
+
 
         $.ajax({
             type: "GET",
@@ -46,6 +75,7 @@ $(document).on('click','#btnel', function () {
 $('#actualizarn').click(function (e) { 
 
     let data = new FormData($('#formn')[0]);
+    console.log("Datos a enviar:", data);
     
 
     $.ajax({
@@ -59,7 +89,10 @@ $('#actualizarn').click(function (e) {
             $('#actualizarn').hide();
             $('#insertarn').show();
             console.log(response);
-            mostrarnoticia();
+            tabla.ajax.reload();
+        },
+        error: function (error) {
+            console.error("Error en la solicitud AJAX:", error);
         }
     });
     
@@ -68,6 +101,7 @@ $('#actualizarn').click(function (e) {
 
 $(document).on('click','#btned', function () {
     let id = $(this).val();
+    console.log(id);
     event.preventDefault();
     $.ajax({
         type: "POST",
@@ -77,12 +111,14 @@ $(document).on('click','#btned', function () {
             $('#actualizarn').show();
             $('#insertarn').hide();
             let data = JSON.parse(response)
+            console.log(data);
             $('#id').val(data.id_noticia);
             $('#tn').val(data.id_tipo_noticia);
             $('#titulo').val(data.titulo);
             $('#descripcion').val(data.descripcion);
             $('#fecha').val(data.fecha);
-            $('#imagen').val(data.imagen);
+            $('#imagen').html(data.imagen);
+
             
 
         }
@@ -91,40 +127,43 @@ $(document).on('click','#btned', function () {
 
 function mostrarnoticia(){
 
-    $.ajax({
-        type: "GET",
-        url: "mostrarn.php",
 
-        success: function (response) {
-            let data = JSON.parse(response)
 
-            let lista = '';
-            $.each(data, function (index, value) { 
-                lista+=`
-                <tr>
-                    <td>${value.id_noticia}</td>
-                    <td>${value.titulo}</td>
-                    <td>${value.descripcion}</td>
-                    <td>${value.nombre_not}</td>    
-                    <td>${value.imagen}</td>
-                    <td>
-                        <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Editar</button>
-                        <button button class="btn btn-success" id="btnel" value="${value.id_noticia}">Eliminar</button>
-                    </td>
+    // $.ajax({
+    //     type: "GET",
+    //     url: "mostrarn.php",
+
+    //     success: function (response) {
+    //         let data = JSON.parse(response)
+
+    //         let lista = '';
+    //         $.each(data, function (index, value) { 
+    //             lista+=`
+    //             <tr>
+    //                 <td>${value.id_noticia}</td>
+    //                 <td>${value.nombre_usuario}</td>
+    //                 <td>${value.titulo}</td>
+    //                 <td>${value.descripcion}</td>
+    //                 <td>${value.nombre_not}</td>    
+    //                 <td>${value.imagen}</td>
+    //                 <td>
+    //                     <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Editar</button>
+    //                     <button button class="btn btn-success" id="btnel" value="${value.id_noticia}">Eliminar</button>
+    //                 </td>
                     
-                </tr>
-                `
-            });
-            $('#lista').html(lista);
-        }
-    });
+    //             </tr>
+    //             `
+    //         });
+    //         $('#lista').html(lista);
+    //     }
+    // });
 
 }
 
 
 $('#insertarn').click(function (e) { 
     let data = new FormData($('#formn')[0]);
-    
+    console.log(data);
 
     $.ajax({
         type: "POST",
@@ -134,8 +173,11 @@ $('#insertarn').click(function (e) {
         processData:false,
 
         success: function (response) {
+           
+            tabla.ajax.reload();
             console.log('insertado');
         }
     });
     
 });
+

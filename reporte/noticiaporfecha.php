@@ -96,7 +96,7 @@
                     <?php 
                     // echo 'usuario: '.$_SESSION['usuario_nombre']; 
                     ?>
-                    <a clas="btn btn-danger btn-sm" href="logout.php">Cerrar session</a>
+                    <a clas="btn btn-danger btn-sm" href="../logout.php">Cerrar session</a>
                     
 
                 </div>

@@ -31,7 +31,7 @@ function mostrarnoticia(){
 
                 lista+=`
                     <div class="col-4">
-                        <img src='${value.imagen}' class="card-img-top" alt="...">
+                        <img src='noticia/${value.imagen}' class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${value.titulo}</h5>
                             <p class="card-text">${value.descripcion}
