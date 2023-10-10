@@ -26,6 +26,28 @@ $(document).ready(function () {
 });
 
 
+
+
+
+$(document).on('click','#btnel', function () {
+    let id = $(this).val()
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "eliminar.php",
+        data: {id},
+        success: function (response) {
+            mostrarusuario();
+            console.log('eliminado');
+        }
+    });
+
+});
+
+
+
+
+
 $('#actualizaru').click(function (e) { 
 
     let data = $('#form').serialize();
