@@ -133,7 +133,8 @@
         </div>
     </div>
 
-    <input  type="button" class="btn btn-primary" id="insertaru" name="insertaru" value="insertar">
+    <input  type="button" class="btn btn-primary" id="insertaru" name="insertaru" value="Insertar">
+    <input  type="button" class="btn btn-primary" id="actualizaru" name="actualizaru" value="Actualizar">
 
 
 <br>
@@ -145,6 +146,7 @@
                     <th>Nombre usuario</th>
                     <th>Correo</th>
                     <th>Fecha</th>
+                    <th>Operaciones</th>
 
                 </tr>
             </thead>

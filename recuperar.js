@@ -1,4 +1,5 @@
-function login(){
+function recuperar(){
+
     let form = $("#form_login");
     let user = $("#correo").val();
     let pass = $("#password").val();
@@ -27,7 +28,7 @@ function login(){
 
                 alert("usuario o contraseña incorrecto");
             }else if(response.valid==1) {
-                window.location.href = "menu.php";
+                // window.location.href = "menu.php";
                 alert("correcto");
             }
         }
@@ -35,8 +36,3 @@ function login(){
     });
 }
 
-
-
-function recuperarcontrasena(){
-    window.location.href = "recuperarfront.php";
-}

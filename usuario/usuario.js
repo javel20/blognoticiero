@@ -1,6 +1,9 @@
 $(document).ready(function () {
     console.log('asd');
 
+    $('#actualizaru').hide();
+
+
     mostrarusuario();
 
     $.ajax({
@@ -23,6 +26,47 @@ $(document).ready(function () {
 });
 
 
+$('#actualizaru').click(function (e) { 
+
+    let data = $('#form').serialize();
+    $.ajax({
+        type: "POST",
+        url: "actualizar.php",
+        data: data,
+        
+        success: function (response) {
+            mostrarusuario();
+            console.log(response);
+            $('#actualizaru').hide();
+            $('#insertaru').show();
+        }
+    });
+    
+});
+
+
+$(document).on('click','#btned', function () {
+    let id = $(this).val()
+    console.log(id);
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "cargar.php",
+        data: {id},
+        success: function (response) {
+            let data = JSON.parse(response);
+            $('#id').val(data.id_usuario);
+            $('#tu').val(data.id_tipo_usuario);
+            $('#nombre_usuario').val(data.nombre_usuario);
+            $('#correo').val(data.correo);
+            $('#pass').hide();  
+            $('#fecha').val(data.fecha);
+            $('#actualizaru').show();
+            $('#insertaru').hide();
+        }
+    });
+});
+
     function mostrarusuario(){
 
         $.ajax({
@@ -41,6 +85,11 @@ $(document).ready(function () {
                         <td>${value.nombre_usuario}</td>
                         <td>${value.correo}</td>
                         <td>${value.fecha}</td>
+                        <td> 
+                            <button class="btn btn-success" id="btned" value="${value.id_usuario}">Editar</button>
+                            <button class="btn btn-warning" id="btncamb" value="${value.id_usuario}">Cambiar contraseña</button>
+                            <button class="btn btn-danger" id="btnel" value="${value.id_usuario}">Eliminar</button>
+                        </td>
                         
                     </tr>
                     `

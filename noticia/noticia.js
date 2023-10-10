@@ -24,7 +24,8 @@ $(document).ready(function () {
                {"data": "imagen"},
                {"data": "id_noticia",
                "render": function(data, type, row) {
-                   return '<button class="btn btn-success btn-editar" id="btned" value="' + data + '">Editar</button>';
+                   return '<button class="btn btn-success btn-editar btn-sm" id="btned" value="' + data + '">Editar</button>'+
+                   '<button class="btn btn-danger btn-eliminar btn-sm" id="btnel" value="' + data + '">Eliminar</button>';
                }}
             
         ],
@@ -63,7 +64,8 @@ $(document).on('click','#btnel', function () {
         url: "eliminar.php",
         data: {id},
         success: function (response) {
-            mostrarnoticia();
+            tabla.ajax.reload();
+            alert('Noticia eliminada');
             console.log('eliminado');
         }
     });

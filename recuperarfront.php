@@ -9,9 +9,11 @@
 <body>
     <form action="" id="login" class="container">
         <div class="row justify-content-center my-3">
-            <div class="col-2">
+            <div class="col-3">
                 <input type="email" class="form-control" id="correo" placeholder="Ingrese usuario">
-                <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña">
+                <input type="password" class="form-control" id="password" placeholder="Ingrese ultima contraseña"><br><br>
+                <input type="password2" class="form-control" id="password2" placeholder="Ingrese contraseña nueva">
+                <input type="password3" class="form-control" id="password3" placeholder="Repita contraseña nueva">
             </div>
         </div>
 
@@ -19,14 +21,13 @@
     </form>
     
     <div class="auth d-grid gap-2 col-2 mx-auto">
-        <a href="javaScript:void(0)" class="btn btn-primary" onclick="login()">INICIAR SESION</a>
-        <!-- <a href="javaScript:void(0)" class="btn btn-primary" onclick="recuperarcontrasena()">OLVIDO CONTRASEÑA</a> -->
+        <a href="javaScript:void(0)" class="btn btn-primary" onclick="recuperar()">GUARDAR NUEVA CONTRASEÑA</a>
     </div>
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="login.js"></script>
+    <script src="recuperar.js"></script>
 
 </body>
 </html>
