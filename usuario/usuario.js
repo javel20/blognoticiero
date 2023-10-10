@@ -1,7 +1,8 @@
 $(document).ready(function () {
     console.log('asd');
-
+    $('#pass2').hide();
     $('#actualizaru').hide();
+    $('#actualizarconu').hide();
 
 
     mostrarusuario();
@@ -25,6 +26,58 @@ $(document).ready(function () {
     });
 });
 
+
+$('#actualizarconu').click(function (e) { 
+    let data = $('#form').serialize();
+    $.ajax({
+        type: "POST",
+        url: "actualizarcontra.php",
+        data: data,
+        
+        success: function (response) {
+            console.log(response);
+            $('#actualizaru').hide();
+            $('#insertaru').show();
+            
+            if(response.valid==0){
+                
+                alert("usuario o contraseña incorrecto");
+            }else if(response.valid==1) {
+                // mostrarusuario();
+                window.location.href = "menuusuarioinsertar.php";
+                alert("correcto");
+            }
+        }
+    });
+    
+});
+
+
+
+$(document).on('click','#btncamb', function () {
+    $('#insertaru').hide();
+    $('#actualizarconu').show();
+    $('#tu').hide();
+    $('#correo').hide();
+    $('#nombre_usuario').hide();
+    $('#fecha').hide();
+    $('#pass2').show();
+    let id = $(this).val()
+    console.log(id);
+    event.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "cargarcontra.php",
+        data: {id},
+        success: function (response) {
+            let data = JSON.parse(response);
+            $('#id').val(data.id_usuario);
+            // mostrarusuario();
+            // console.log('eliminado');
+        }
+    });
+
+});
 
 
 

@@ -129,12 +129,17 @@
             <input class="form-control" type="password" id="pass" name="pass" placeholder="Ingrese password">
         </div>
         <div class="col-4">
+            <input class="form-control" type="password" id="pass2" name="pass2" placeholder="Ingrese password nuevo">
+        </div>
+        <div class="col-4">
             <input class="form-control" type="date" id="fecha" name="fecha" placeholder="Ingrese fecha">
         </div>
+        
     </div>
 
     <input  type="button" class="btn btn-primary" id="insertaru" name="insertaru" value="Insertar">
     <input  type="button" class="btn btn-primary" id="actualizaru" name="actualizaru" value="Actualizar">
+    <input  type="button" class="btn btn-primary" id="actualizarconu" name="actualizarconu" value="Actualizar contraseña">
 
 
 <br>
