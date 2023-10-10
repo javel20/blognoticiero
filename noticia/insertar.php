@@ -13,11 +13,8 @@ if (($_FILES["imagen"]["type"] == "image/jpg")
     //ruta del archivo y guarda en la ubicacion deseada
     move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta.$_FILES['imagen']['name']);
 
-    // $imagen = $ruta.$_FILES['imagen']['name'];
-    if($_FILES["imagen"]["type"] !== ''){
+    $imagen = $ruta.$_FILES['imagen']['name'];
 
-        
-    }
     // echo $imagen;
 
     require ('../conexion.php');

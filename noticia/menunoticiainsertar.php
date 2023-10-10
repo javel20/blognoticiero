@@ -128,6 +128,8 @@ if($_SESSION['usuario_nombre'] === null){
     <div class="row my-3">
         <div class="col-4">
             <input type="file" class="form-control" id="imagen" name="imagen" placeholder="Ingrese imagen">
+            <!-- <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Ingrese imagen"> -->
+            <span>Suba la imagen obligatoriamente</span>
         </div>
         <div class="col-4">
             <input type="date" class="form-control" name="fecha" id="fecha">

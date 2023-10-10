@@ -88,8 +88,8 @@ $('#actualizarn').click(function (e) {
         success: function (response) {
             $('#actualizarn').hide();
             $('#insertarn').show();
-            console.log(response);
             tabla.ajax.reload();
+            console.log(response);
         },
         error: function (error) {
             console.error("Error en la solicitud AJAX:", error);
@@ -129,34 +129,34 @@ function mostrarnoticia(){
 
 
 
-    // $.ajax({
-    //     type: "GET",
-    //     url: "mostrarn.php",
+    $.ajax({
+        type: "GET",
+        url: "mostrarn.php",
 
-    //     success: function (response) {
-    //         let data = JSON.parse(response)
+        success: function (response) {
+            let data = JSON.parse(response)
 
-    //         let lista = '';
-    //         $.each(data, function (index, value) { 
-    //             lista+=`
-    //             <tr>
-    //                 <td>${value.id_noticia}</td>
-    //                 <td>${value.nombre_usuario}</td>
-    //                 <td>${value.titulo}</td>
-    //                 <td>${value.descripcion}</td>
-    //                 <td>${value.nombre_not}</td>    
-    //                 <td>${value.imagen}</td>
-    //                 <td>
-    //                     <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Editar</button>
-    //                     <button button class="btn btn-success" id="btnel" value="${value.id_noticia}">Eliminar</button>
-    //                 </td>
+            let lista = '';
+            $.each(data, function (index, value) { 
+                lista+=`
+                <tr>
+                    <td>${value.id_noticia}</td>
+                    <td>${value.nombre_usuario}</td>
+                    <td>${value.titulo}</td>
+                    <td>${value.descripcion}</td>
+                    <td>${value.nombre_not}</td>    
+                    <td>${value.imagen}</td>
+                    <td>
+                        <button button class="btn btn-success" id="btned" value="${value.id_noticia}">Editar</button>
+                        <button button class="btn btn-success" id="btnel" value="${value.id_noticia}">Eliminar</button>
+                    </td>
                     
-    //             </tr>
-    //             `
-    //         });
-    //         $('#lista').html(lista);
-    //     }
-    // });
+                </tr>
+                `
+            });
+            $('#lista').html(lista);
+        }
+    });
 
 }
 
